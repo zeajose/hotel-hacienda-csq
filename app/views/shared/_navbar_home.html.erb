@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon navbar-transparent">
+<div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent spaced-navbar">
   <%= link_to root_path, class: "navbar-brand" do %>
     <ul class="navbar-nav mr-auto">
-      <li>Hacienda CSQs</li>
+      <li class="hotel-name">Hacienda CSQ</li>
     </ul>
   <% end %>
 
@@ -10,14 +10,14 @@
   </button>
 
   <div>
-    <ul class="navbar-nav mr-auto">
-      <li>Rooms</li>
-      <li>lihoto Tour</li>
-      <li>Amenities</li>
-      <li>City & Culture</li>
-      <li>Events</li>
-      <li>About</li>
-      <li>Press</li>
+    <ul class="navbar-nav mr-auto" style="letter-spacing: 1px; font-size: 14px; margin-top: 2px;">
+      <li><%= link_to "Rooms", root_path, class: "nav-link" %></li>
+      <li><%= link_to "Photo Tours", root_path, class: "nav-link" %></li>
+      <li><%= link_to "Amenities", root_path, class: "nav-link" %></li>
+      <li><%= link_to "City & Culture", root_path, class: "nav-link" %></li>
+      <li><%= link_to "Events", root_path, class: "nav-link" %></li>
+      <li><%= link_to "About", root_path, class: "nav-link" %></li>
+      <li><%= link_to "Press", root_path, class: "nav-link" %></li>
     </ul>
   </div>
 
@@ -26,25 +26,26 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Profile", bookings_path, class: "nav-link" %>
+          <%= link_to "Book your stay +", root_path, class: "nav-link", style:"letter-spacing: 1px; font-size: 14px; margin-top: 2px;" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Create a post", new_post_path, class: "dropdown-item" %>
-            <%= link_to "Edit profile", edit_user_registration_path(current_user), class: "dropdown-item" %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="border-radius: 5px 0px 5px 5px;">
+            <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
+            <%= link_to "Lease with us", new_post_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light mr-3 round" %>
+        <li class="nav-item active">
+          <%= link_to "Book your stay +", root_path, class: "nav-link", style:"letter-spacing: 1px; font-size: 14px; margin-top: 2px;" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-outline-light round" %>
+        <li class="nav-item dropdown">
+          <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="border-radius: 5px 0px 5px 5px;">
+            <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
+          </div>
         </li>
       <% end %>
     </ul>
