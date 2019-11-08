@@ -1,6 +1,11 @@
 .avatar {
-  width: 40px;
   border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 10px;
+  background-position: top center;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
 }
 .avatar-large {
   width: 56px;

@@ -16,5 +16,10 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script>
+      $('button').on('click', function(){
+        $('body').toggleClass('open');
+      });
+    </script>
   </body>
 </html>

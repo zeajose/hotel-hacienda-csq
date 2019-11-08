@@ -11,3 +11,7 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$('button').on('click', function(){
+  $('body').toggleClass('open');
+});
