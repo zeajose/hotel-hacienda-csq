@@ -1,0 +1,40 @@
+<%= render 'shared/navbar' %>
+<div class="container aligner" height="100vh">
+  <div class="form-card border rounded p-4 mt-5">
+    <h1>Post on Get Out:</h1>
+
+    <%= simple_form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!-- [...] all the fields -->
+      <%= f.input :title,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "title" }%>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price, as: :integer,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "price" }%>
+      <%= f.input :category, collection: ['camping gear', 'sleeping bags', 'knifes and tools', 'outdoor living', 'outdoor equipment' ],
+                  required: true%>
+      <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :source, required: true, input_html: { multiple: true }  %>
+        <%= p.input :source_cache, as: :hidden %>
+      <% end %>
+
+      <%= f.submit 'Submit', class: "btn btn-warning button-main" %>
+    <% end %>
+
+    <%= link_to 'Back to the list', posts_path(@post), class: "btn btn-light border button-main back_button"%>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+h5{
+  padding-top: 18px;
+  padding-left: 10px;
+}
+
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  a{
+  margin: 10px 18px;
+  .display-img {
+    width: 204px;
+    height: 171px;
+  }
+  }
+}

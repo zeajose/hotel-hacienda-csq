@@ -1,0 +1,24 @@
+.banner-home {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/uY2UIyO5o5c/1600x900);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.banner-home h1 {
+  padding-top: 150px;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.banner-home p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
