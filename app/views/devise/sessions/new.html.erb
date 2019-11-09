@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="container mt-3 col-sm-6 col-md-4">
 
-  <h2>Log in</h2>
+  <h2 style="padding-bottom: 0.4em; border-bottom: 1px solid #dee2e6;">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -15,13 +15,10 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
-  <%= link_to "Sign up", new_user_registration_path %>
-
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
+      <%= f.button :submit, "Log in", class: 'btn btn-primary main-button' %>
     </div>
+    <%= link_to "Sign up", new_user_registration_path, class:"form-text text-muted", style:"font-family: 'Brandon Grotesque', 'Helvetica', 'sans-serif'" %>
   <% end %>
-
-
 
 </div>

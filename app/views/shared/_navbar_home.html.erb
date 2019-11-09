@@ -29,7 +29,12 @@
           <%= link_to "Book your stay +", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo? %>
+            <%= image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else  %>
+            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="border-radius: 5px 0px 5px 5px;">
             <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
             <%= link_to "Lease with us", new_post_path, class: "dropdown-item" %>

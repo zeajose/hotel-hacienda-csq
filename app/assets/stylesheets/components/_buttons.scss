@@ -1,3 +1,19 @@
 .round {
   border-radius: 100px;
 }
+
+.main-button {
+  width: 100%;
+  font-weight: 700;
+  background: #1d1c1c;
+  border: 1px solid #1d1c1c;
+  color: #f7f3ea;
+  height: 54px;
+  width: 100%;
+  cursor: pointer;
+  font-family: "Brandon Grotesque", "Helvetica", "sans-serif";
+}
+
+.main-button:hover {
+  background: #3a3939;
+}
